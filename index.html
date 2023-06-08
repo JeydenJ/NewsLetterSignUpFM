@@ -9,7 +9,7 @@
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 <body>
-  <form action="/subscribe" method="POST">
+  <form action="/subscribe" method="POST" onsubmit="return submitForm(event)">
     <h2>Stay updated!</h2>
       <p>Join 60,000+ product managers receiving monthly updates on:</p>
       <ul>
@@ -18,16 +18,17 @@
         <li>And much more!</li>
       </ul>
         <h2>Email address</h2>
-        <input placeholder="email@company.com" id="userEmail"></input>
+        <input placeholder="email@company.com" id="userEmail" type="email" name="email" required></input>
 
         <button type="submit" class="subscribe-button">Subscribe to monthly newsletter</button>
   </form>
 
 
-  <h2>Thanks for subscribing!</h2>
-
+  <div id="thankYouMessage" style="display: none;">
+    <h2>Thanks for subscribing!</h2>
   <p>A confirmation email has been sent to ash@loremcompany.com. 
   Please open it and click the button inside to confirm your subscription.</p>
+</div>
 
   <button class="dismiss-button">Dismiss message</button>
 
